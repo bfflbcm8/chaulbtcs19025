@@ -1,0 +1,35 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>chaulbtcs19025_AS2_ATNShop</title>
+    </head>
+    <body>
+        <h1>Add product of ATN Shop </h1>
+        <form action="/Product" method="POST">
+            <input type="text" placeholder="name" name="name" />
+            <input type="text" placeholder="brand" name="brand">
+            <input type="text" placeholder="price" name="price">
+            <button type="submit">Submit</button>
+        </form>
+
+        <h2> Product List</h2>
+        <ul class="quotes">
+            <!-- Loop through quotes -->
+            <% for(var i = 0; i < quotes.length; i++) {%>
+                <li class="quote">
+                    
+                        <!-- Output name from the iterated quote object -->
+                        <span>Product Name: <%= quotes[i].name %> |  </span>
+                        <!-- Output quote from the iterated quote object -->
+                        <span>Brand: <%= quotes[i].brand %>  |  </span>
+                        <!-- Output quote from the iterated quote object -->
+                        <span>Price: <%= quotes[i].price %> $</span>
+                        <a href="/Product/remove/<%= quotes[i]._id %>">Remove</a>
+                </li>
+            <% } %>
+        </ul>
+
+    </body>
+</html>
