@@ -18,18 +18,19 @@
         <ul class="quotes">
             <!-- Loop through quotes -->
             <% for(var i = 0; i < quotes.length; i++) {%>
-                <li class="quote">
-                    
-                        <!-- Output name from the iterated quote object -->
-                        <span>Product Name: <%= quotes[i].name %> |  </span>
+                <li class="quote">                  
+                        <!-- Output name from the iterated quote object -->                   
+                        <span>Product Name: <%= quotes[i].name %> <br></span>
                         <!-- Output quote from the iterated quote object -->
-                        <span>Brand: <%= quotes[i].brand %>  |  </span>
+                        <span>Brand: <%= quotes[i].brand %> <br></span>
                         <!-- Output quote from the iterated quote object -->
                         <span>Price: <%= quotes[i].price %> $</span>
+                        <br>
                         <a href="/Product/remove/<%= quotes[i]._id %>">Remove</a>
+                        <br>
+                        <br>
                 </li>
             <% } %>
         </ul>
-
     </body>
 </html>
